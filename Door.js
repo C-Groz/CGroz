@@ -31,7 +31,9 @@ class Door {
     }
 
     userInteracted(){
-        this.openDoor();
+        if(score.money >= this.cost){
+            this.openDoor();
+        }
     }
 
     offerInteraction(){
