@@ -32,7 +32,7 @@ class MysteryBox{
             new M4(player1.x, player1.y),
             new Barrett(player1.x, player1.y),
             new Famas(player1.x, player1.y),
-            new MP5(player1.x, player1.y),
+            //new MP5(player1.x, player1.y),
         ]
         
 
