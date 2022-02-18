@@ -20,7 +20,6 @@ class GameMap{
             [1000, 575, 325, 50],
             [1275, 275, 150, 50],
             [1275, 275, 50, 325],
-            [200, 200, 500, 500],
             [mbox.x, mbox.y, 150, 50], //mystery box(doesn't get drawn by drawMap())
         ]
 
