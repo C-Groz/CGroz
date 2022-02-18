@@ -160,7 +160,7 @@ function draw() {
   currentGun.shoot();
 
   //reload
-  if((keyIsDown(82) && !score.reloading) || score.ammoIn == 0 && !score.reloading){
+  if((keyIsDown(82) && !score.reloading) || score.ammoIn == 0 && !score.reloading && ammoOut != 0){
     currentGun.startReload();
   }
   if(score.reloading && currentGun.tempTimeEnd < millis()){
