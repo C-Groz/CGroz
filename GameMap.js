@@ -25,7 +25,7 @@ class GameMap{
 
         this.doorCoords = [
             [600, 200, 20, 200], //door 1
-            [900, 200, 20, 200], //door 2
+            //[900, 200, 20, 200], //door 2
         ]
 
         this.enemySpawns = [
