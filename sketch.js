@@ -213,7 +213,6 @@ function initializePickups(){
   ]
   doors = [
     door1 = new Door(1, 1000, 50, 25, [1]),
-    door2 = new Door(2, 1500, 50, 25, [4, 5])
   ]
 }
 
