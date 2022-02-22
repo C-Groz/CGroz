@@ -8,7 +8,7 @@ function setup() {
   currentGun = new M1911(player1.x, player1.y);
   score = new Score();
  
-  
+
   
   doorCoords = [];
   pickups = [];
@@ -29,6 +29,8 @@ function setup() {
   //startRound();
 
   startButton = createButton('Start Game');
+  startMenuActive = true;
+  deathMenuActive = false;
 }
 
 
@@ -36,8 +38,13 @@ function draw() {
   background(150);
 
   //start menu
-  if(!gameActive){
+  if(!gameActive && startMenuActive){
     drawStartMenu();
+  }
+
+  //death menu
+  if(!gameActive && deathMenuActive){
+    activateDeathMenu();
   }
 
   if(gameActive){
@@ -158,6 +165,12 @@ function draw() {
       
     }
 
+    //player death 
+    if(score.playerHealth <= 0){
+      gameActive = false;
+      activateDeathMenu();
+      deathMenuActive = true;
+    }
 
     //update round
     if(enemyAmount == 0 && score.enemiesRemaining == 0 && gameActive){
@@ -236,9 +249,26 @@ function drawStartMenu(){
 
 }
 
+function activateDeathMenu(){
+  fill(150,44,0)
+  textSize(100);
+  text('You Died', windowWidth/2 - 205, 150);
+
+  fill(40, 40, 40);
+  rect(windowWidth/2 - 200, 250, 400, 500);
+
+  fill(200, 200, 200)
+  textSize(40);
+  text('Kills: ', windowWidth/2 - 150, 325);
+  text(score.kills, windowWidth/2 + 50, 325);
+
+
+}
+
+
 function startGame(){
   gameActive = true;
   startButton.hide();
   startRound();
-  
+  startMenuActive = false;
 }
