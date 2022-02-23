@@ -24,6 +24,7 @@ class Magnum extends Pistol{
         this.imgw = 30;
         this.cost = 1000;
         this.ammoCost = 500;
+        this.damageDecreaseConstant = 8;
     }
     drawGun(xPos,yPos) {
         fill(169,169,169);

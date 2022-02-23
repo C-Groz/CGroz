@@ -8,6 +8,8 @@ class Score{
         this.ammoOut = currentGun.startingOut;
         this.ammoIn = currentGun.startingIn;
         this.reloading = false;
+
+     
     }
 
     drawScoreLayout(){

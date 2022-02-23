@@ -12,6 +12,7 @@ class AK extends AutoRifle {
         this.ammoCost = 500;
         this.imgl = 80;
         this.imgw = 30;
+        this.damageDecreaseConstant = 10;
     }
 
     drawGun(xPos,yPos) {

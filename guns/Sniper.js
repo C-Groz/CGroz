@@ -27,6 +27,7 @@ class Sniper {
         this.bulletCooldown = 1000;
         this.canShoot = true;
         this.lastShot = 0;
+        this.damageDecreaseConstant = 5;
     }
     drawGun(xPos,yPos) {
         fill(10,80,10);

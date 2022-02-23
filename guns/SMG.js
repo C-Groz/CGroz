@@ -32,6 +32,7 @@ class SMG {
         this.lastBulletFired = 0;
         this.cost = 1000;
         this.img = loadImage('images/mp5.png');
+        this.damageDecreaseConstant = 5;
     }
 
     

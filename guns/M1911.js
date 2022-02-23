@@ -13,5 +13,6 @@ class M1911 extends Pistol{
         this.imgw = 30;
         this.cost = 500;
         this.ammoCost = 500;
+        this.damageDecreaseConstant = 5;
     }
 }

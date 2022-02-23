@@ -27,6 +27,7 @@ class AutoRifle {
         this.bulletVelocity = 20;
         this.timeBetweenBullets = 130;
         this.name = "AR";
+        this.damageDecreaseConstant = 10;
 
         this.canShoot = true;
         this.lastBulletFired = 0;

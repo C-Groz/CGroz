@@ -25,14 +25,23 @@ function setup() {
   initializePickups();
   gameMap.drawMap();
   score.drawScoreLayout();
-  gameActive = false;
-  //startRound();
+  gameActive = false; //false
+  startRound();
 
   startButton = createButton('Start Game');
-  startMenuActive = true;
+  startMenuActive = true; //true
   deathMenuActive = false;
 
   invincible = false;
+
+  //penetration test enviroment
+  testEnviroment = false;
+  if(testEnviroment){
+    startRound();
+    for(var i = 0; i < 5; i++){
+      append(enemies, new Enemy(800 + 10*i, 400));
+    }
+  }
 }
 
 
@@ -61,8 +70,12 @@ function draw() {
       for(var i = 0; i < enemies.length; i++){
         if(enemies[i].contains(bullets[a].xPos, bullets[a].yPos)){
           if(enemies[i].bulletInEnemy != a){
-            enemies[i].health -= currentGun.damage;
+            enemies[i].health -= bullets[a].damage;
             enemies[i].healthPercent = enemies[i].health/enemies[i].startingHealth * 100;
+            bullets[a].damage -= currentGun.damageDecreaseConstant;
+            if(bullets[a].damage <= 0){
+              bullets[a].endRoute();
+            }
           }
           bullets[a].bulletInEnemy = i;
           enemies[i].bulletInEnemy = a;
@@ -193,6 +206,8 @@ function draw() {
     }
 
     }
+    
+    
     
 }
 

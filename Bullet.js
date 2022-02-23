@@ -9,6 +9,8 @@ class Bullet{
         this.radius = 4;
         this.b = null;
 
+        this.damage = currentGun.damage;
+
         this.bulletInEnemy = -1;
     }
 
@@ -39,9 +41,9 @@ class Bullet{
     
     endRoute(a){
         //bullets.splice(bullet, 1);
-        bullets[a].radius = 0;
-        bullets[a].xPos = -2000;
-        bullets[a].yPos = -2000;    
+        this.radius = .0001;
+        this.xPos = -2000;
+        this.yPos = -2000;    
     }
     
 }

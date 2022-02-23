@@ -23,6 +23,7 @@ class Deagle extends Pistol{
         this.imgw = 30;
         this.cost = 1500;
         this.ammoCost = 500;
+        this.damageDecreaseConstant = 7;
     }
     drawGun(xPos,yPos) {
         fill(100,100,100);

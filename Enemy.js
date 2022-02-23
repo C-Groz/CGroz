@@ -52,7 +52,7 @@ class Enemy{
         return false;
     }
     moveTowardPlayer(){
-        if(this != null){
+        if(this != null && !testEnviroment){
             if(this.x < player1.x && this.xClearPos){
                 this.x+=this.Xspeed;  
             }

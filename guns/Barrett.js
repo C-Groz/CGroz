@@ -7,5 +7,6 @@ class Barrett extends Sniper{
         this.ammoCost = 1000;
         this.imgl = 100;
         this.imgw = 40;
+        this.damageDecreaseConstant = 5;
     }
 }

@@ -27,6 +27,7 @@ class Pistol {
         this.name = "Pistol";
 
         this.canShoot = true;
+        this.damageDecreaseConstant = 5;
     }
 
     

@@ -13,6 +13,7 @@ class Famas extends AutoRifle{
         this.ammoCost = 500;
         this.imgl = 80;
         this.imgw = 30;
+        this.damageDecreaseConstant = 5;
     }
     drawGun(xPos,yPos) {
         fill(69,69,69);

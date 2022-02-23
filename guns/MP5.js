@@ -7,6 +7,7 @@ class MP5 extends SMG{
         this.imgw = 30;
         this.ammoCost = 500;
         this.cost = 1500;
+        this.damageDecreaseConstant = 10;
     }
     drawGun(xPos,yPos) {
         fill(0,0,0);
