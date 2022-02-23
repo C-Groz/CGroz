@@ -32,7 +32,7 @@ function setup() {
   startMenuActive = true;
   deathMenuActive = false;
 
-  invincible = true;
+  invincible = false;
 }
 
 
