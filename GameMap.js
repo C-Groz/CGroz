@@ -13,16 +13,18 @@ class GameMap{
             [-1000, -1000, 3500, 1000], //top map edge
             [-1000, 1000, 3500, 1000], //bottom map edge
             [1500, 0, 50, 1000], //right map edge
-            [600, 0, 20, 200], //right spawn room wall
-            [600, 400, 20, 200], //right spawn room wall
-            [0, 600, 620, 20], //bottom spawn room wall 
-            [290, 800, 20, 200],
+            [600, 0, 30, 200], //right spawn room wall
+            [600, 400, 30, 200], //right spawn room wall
+            [0, 600, 630, 30], //bottom spawn room wall
+            [600, 600, 120, 30],//room under spawn connector wall
+            [700, 600, 30, 100],//room under spawn top door wall
+            [700, 900, 30, 100],//room under spawn bottom door wall
             [mbox.x, mbox.y, 150, 50], //mystery box(doesn't get drawn by drawMap())
         ]
 
         this.doorCoords = [
-            [600, 200, 20, 200], //door 1
-            //[900, 200, 20, 200], //door 2
+            [600, 200, 30, 200], //door 1
+            [700, 700, 30, 200], //door 2
         ]
 
         this.enemySpawns = [

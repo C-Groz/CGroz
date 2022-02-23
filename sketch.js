@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   player1 = new Player(windowWidth/2, windowHeight/2, 100);
-  mbox = new MysteryBox(800, 0);
+  mbox = new MysteryBox(300, 950);
   //gameMap = new GameMap((windowWidth - 1500)/2, (windowHeight - 1000)/2);
   gameMap = new GameMap(windowWidth/2 - 300, windowHeight - 750);
   //currentGun = new AK(player1.x, player1.y);
@@ -31,6 +31,8 @@ function setup() {
   startButton = createButton('Start Game');
   startMenuActive = true;
   deathMenuActive = false;
+
+  invincible = true;
 }
 
 
@@ -166,7 +168,7 @@ function draw() {
     }
 
     //player death 
-    if(score.playerHealth <= 0){
+    if(score.playerHealth <= 0  && !invincible){
       gameActive = false;
       activateDeathMenu();
       deathMenuActive = true;
@@ -226,6 +228,7 @@ function initializePickups(){
   ]
   doors = [
     door1 = new Door(1, 1000, 50, 25, [1]),
+    door2 = new Door(2, 1000, 50, 25, [3,4]),
   ]
 }
 

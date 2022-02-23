@@ -4,7 +4,8 @@ class MysteryBox{
         this.y = yPos;
         this.length = 150;
         this.width = 50;
-        this.pickupRadius = 250;
+        this.xDist = 50;
+        this.yDist = 50;
         this.cost = 1000;
         this.spinning = false;
         this.open = false;
@@ -67,11 +68,16 @@ class MysteryBox{
         
     }
     playerInProximity(){
-        let distance = sqrt(pow((this.x + gameMap.x + 75) - player1.x , 2) + pow((this.y + gameMap.y) - player1.y, 2));
-        if(distance <= this.pickupRadius / 2){
+        if(this.rectangleContains(this.x - this.xDist + gameMap.x, this.y - this.yDist + gameMap.y, this.length + this.xDist * 2, this.width + this.yDist * 2, player1.x, player1.y)){
             return true;
         }
         return false;
+    }
+    rectangleContains(rectX, rectY, rectL, rectW, x, y){
+        if((x > rectX) && (x < rectX + rectL) && (y > rectY) && (y < rectY + rectW)){
+            return true;
+        }
+        return false
     }
     offerInteraction(){
         fill(255, 255, 255);
