@@ -198,13 +198,17 @@ function draw() {
     currentGun.shoot();
 
     //reload
-    if((keyIsDown(82) && !score.reloading) || score.ammoIn == 0 && !score.reloading){
+    if((keyIsDown(82) && !score.reloading) || (score.ammoIn == 0 && !score.reloading && score.ammoOut != 0)){
       currentGun.startReload();
     }
     if(score.reloading && currentGun.tempTimeEnd < millis()){
       currentGun.reload();
     }
-
+    if(score.ammoIn == 0 && score.ammoOut == 0){
+      fill(255, 210, 0);
+      textSize(40);
+      text("No Ammo", windowWidth/2 - 76, player1.y + 300);
+    }
     }
     
     
@@ -239,7 +243,7 @@ function checkSpawn(){
 function initializePickups(){
   pickups = [
     ammoPickup = new AmmoPickup(-30, 400),
-    TopGunPickup = new GunPickup(150, -30, new M1911(player1.x, player1.y)),
+    TopGunPickup = new GunPickup(150, -40, new Olympia(player1.x, player1.y)),
   ]
   doors = [
     door1 = new Door(1, 1000, 50, 25, [1]),

@@ -2,7 +2,7 @@ class Score{
     constructor(){
         this.round = 1;
         this.kills = 0;
-        this.money = 1000;
+        this.money = 500;
         this.enemiesRemaining = 1;
         this.playerHealth = 100;
         this.ammoOut = currentGun.startingOut;
@@ -57,7 +57,7 @@ class Score{
         //reload
         if(this.reloading){
             textSize(40);
-            text("Reloading", windowWidth/2 - 70, player1.y + 300);
+            text("Reloading", windowWidth/2 - 74, player1.y + 300);
         }
         
 

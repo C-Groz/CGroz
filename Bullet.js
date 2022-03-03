@@ -1,13 +1,15 @@
 class Bullet{
-    constructor(initX, initY, initAngle){
+    constructor(initX, initY, sprayDeviation){
         this.xPos = initX;
         this.yPos = initY;
-        this.angle = initAngle;
+        this.angle = 0;
         this.speed = currentGun.bulletVelocity;;
         this.Xspeed = this.speed * cos(player1.angle);
         this.Yspeed = this.speed * sin(player1.angle);
         this.radius = 4;
         this.b = null;
+        
+        this.sprayDeviation = sprayDeviation;
 
         this.damage = currentGun.damage;
 
@@ -16,8 +18,8 @@ class Bullet{
 
     update(){
         if(this.xPos != null){
-            this.xPos+=this.Xspeed;
-            this.yPos+=this.Yspeed;
+            this.xPos+=this.Xspeed + (this.sprayDeviation * sin(player1.angle));
+            this.yPos+=this.Yspeed - (this.sprayDeviation * cos(player1.angle));
         }
 
         if (keyIsDown(65)) {
@@ -34,6 +36,10 @@ class Bullet{
           
         if (keyIsDown(83)) {
             this.yPos -= 5;
+        }
+
+        if(currentGun.name == "Olympia"){
+            this.damage -= currentGun.rangeBulletDecay;
         }
         
     }
