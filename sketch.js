@@ -246,7 +246,7 @@ function initializePickups(){
     TopGunPickup = new GunPickup(150, -40, new Olympia(player1.x, player1.y)),
   ]
   doors = [
-    door1 = new Door(1, 1000, 50, 25, [1]),
+    door1 = new Door(1, 1000, 50, 25, [1,5]),
     door2 = new Door(2, 1000, 50, 25, [3,4]),
   ]
 }
